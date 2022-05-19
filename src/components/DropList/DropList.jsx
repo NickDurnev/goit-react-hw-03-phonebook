@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import List from './Sidebar.styled';
+import List from './DropList.styled';
 
 const DropList = ({ children, id }) => (
   <List id={id}>

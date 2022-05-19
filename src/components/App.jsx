@@ -6,7 +6,7 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
 import AgreementModal from './AgreementModal';
-import Sidebar from './Sidebar';
+import DropList from './DropList';
 import { Container } from './App.styled';
 import { light, dark, blue } from '../themes';
 import Button from './Button';
@@ -25,10 +25,15 @@ export class App extends Component {
 
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
+    const theme = localStorage.getItem('theme');
     const parsedContacts = JSON.parse(contacts);
+    const parsedTheme = JSON.parse(theme);
 
     if (parsedContacts) {
       this.setState({ contacts: parsedContacts });
+    }
+    if (parsedTheme) {
+      this.setState({ theme: parsedTheme });
     }
   }
 
@@ -39,6 +44,7 @@ export class App extends Component {
     if (nextContacts !== prevContacts) {
       localStorage.setItem('contacts', JSON.stringify(nextContacts));
     }
+    localStorage.setItem('theme', JSON.stringify(this.state.theme));
   }
 
   addContact = value => {
@@ -117,7 +123,7 @@ export class App extends Component {
             Choose theme
           </Button>
           {isSidebarOpen && (
-            <Sidebar id={'sidebar-1'}>
+            <DropList id={'sidebar-1'}>
               <Button
                 onClick={() => {
                   this.changeTheme(dark);
@@ -142,7 +148,7 @@ export class App extends Component {
               >
                 Blue
               </Button>
-            </Sidebar>
+            </DropList>
           )}
           <h1>Phonebook</h1>
           <ContactForm onSubmit={contact => this.addContact(contact)} />

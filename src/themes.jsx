@@ -14,7 +14,7 @@ export const light = {
   textColor: '#000',
   bgElementColor: '#60D0CA',
   elementColor: '#fff',
-  bgElementHoverColor: '#941BF2',
+  bgElementHoverColor: '#50aaa6',
   boxShadow: ' 0px 5px 10px 2px rgba(34, 60, 80, 0.2)',
 };
 
@@ -22,10 +22,14 @@ export const dark = {
   ...light,
   bgColor: '#2D2831',
   textColor: '#fff',
+  bgElementColor: '#8c6fcf',
+  bgElementHoverColor: '#715ba7',
 };
 
 export const blue = {
   ...light,
   bgColor: '#41418a',
   textColor: '#fff',
+  bgElementColor: '#c9cf6f',
+  bgElementHoverColor: '#c4c393',
 };

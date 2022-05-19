@@ -19,6 +19,8 @@ export const Label = styled.label`
     display: block;
     margin-top: 5px;
     width: 100%;
+    border: solid 1px;
+    border-radius: 5px;
     border-color: ${props => props.theme.bgElementColor};
     background-color: ${props => props.theme.bgColor};
     transition: border-color ${props => props.theme.hoverTransition}

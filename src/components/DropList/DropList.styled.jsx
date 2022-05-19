@@ -2,26 +2,34 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 
 const appear = keyframes`
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(100px);  
+    transform: translateY(-100px);  
   }
 
-  to {
+  50% {
+    opacity:0
+  }
+
+  100% {
     opacity: 1;
     transform: 0;
   }
 `;
 
 const hide = keyframes`
-  from {
+  0% {
     opacity: 1;
     transform: 0;
   }
 
-  to {
+  50% {
+    opacity:0
+  }
+
+  100% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateY(-100px);
   }
 `;
 
