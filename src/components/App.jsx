@@ -38,13 +38,16 @@ export class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const nextContacts = this.state.contacts;
+    const { contacts, theme } = this.state;
     const prevContacts = prevState.contacts;
+    const prevTheme = prevState.theme;
 
-    if (nextContacts !== prevContacts) {
-      localStorage.setItem('contacts', JSON.stringify(nextContacts));
+    if (contacts !== prevContacts) {
+      localStorage.setItem('contacts', JSON.stringify(contacts));
     }
-    localStorage.setItem('theme', JSON.stringify(this.state.theme));
+    if (theme !== prevTheme) {
+      localStorage.setItem('theme', JSON.stringify(this.state.theme));
+    }
   }
 
   addContact = value => {
